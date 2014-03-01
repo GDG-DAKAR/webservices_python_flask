@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h3>Notes</h3>
+  
+    {% from "_formhelpers.html" import render_field %}
+
+    <form action="/web" method=post>
+      
+      {{ render_field(form.note) }}
+      
+
+      <input type=submit class="btn btn-primary" value="Ajouter">
+    
+    </form>
+    
+    <br/><br/><br/>
+
+    {% if notes %}
+
+      <table class="table table-striped">
+      <tr>  
+            <th>Note</th>
+            <th>Date</th>
+        </tr>
+
+      
+      {% for item in notes %}
+        
+        <tr>
+            <td> {{item.note}} </td>
+            <td> {{item.date}} </td>
+        <tr/>
+      {% endfor %}
+      </table>
+      
+
+    {% else %}
+      <p> Lazy boy, come on ! Write down somethin' </p>
+
+    {% endif %}
+
+
+    
+    
+      
+{% endblock %}

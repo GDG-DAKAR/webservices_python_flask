@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+
+<head>
+	<title>Have fun with Python and Flask</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+	<!-- mobile view -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+  
+  {% for message in get_flashed_messages() %}
+    <div class="flash alert alert-success">{{ message|safe}}</div>
+    {% endfor %}
+    </div>
+
+  {% if error %}<p class="error alert alert-danger"><strong>Error:</strong> {{ error }}{% endif %}
+
+  <body class="container">
+  
+    {% block body %}
+    {% endblock %}
+  </body>
+ </html>
